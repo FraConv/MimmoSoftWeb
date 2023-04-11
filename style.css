@@ -1,0 +1,214 @@
+ /*stile html*/
+
+*{box-sizing: border-box;}
+
+body, html{padding: 0; margin: 0;}
+
+body{background: #faf5eb; font-family:Source Sans Pro;}
+
+footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width: 100%; margin-top: 170px;}
+
+
+
+
+ /*classi menu'*/
+
+ .header{background: #53617a; width: 100%; height: 105px; box-shadow: 0 12px 20px rgba(0,0,0,.15); z-index: 1;}
+
+ a{color: white;}
+
+ .header ul {margin: 0; padding: 0; list-style: none; overflow: hidden; background: #53617a}
+
+ .header ul a {text-decoration: none; padding: 20px; display: block; margin-top: 40px;} 
+
+ .header ul a:hover {background-color: #f6cb3f; color: black;} 
+
+ .header .logo{width: 70px; height: 60px; margin-top: 20px; float: left; margin-left: 20px;}
+
+ .header .menu{clear: both; font-size: 22px; max-height: 0; transition: max-height .4s ease-out;}
+
+ .header .menu-icon{ padding: 8px 10px; float: right; margin-top: 45px; margin-right: 30px; cursor: pointer;}
+
+ .header .menu-icon .nav-icon{background-color: #f6cb3f; width: 35px; height: 4px; display: block; position: relative; transition: background-color .2s ease-out;}
+
+ .header .menu-icon .nav-icon::before , .header .menu-icon .nav-icon::after{background-color: #f6cb3f; width: 100%; height: 100%; display: block; content: ""; position: relative; transition: background-color .2s ease-out;}
+
+ .header .menu-icon .nav-icon::before{top: 10px;}
+ 
+ .header .menu-icon .nav-icon::after{top: -14px;}
+
+ .header .menu-botton{display: none;}
+
+ .header .menu-botton:checked ~ .menu{max-height: 390px;}
+ 
+ .header .menu-botton:checked ~ .menu-icon .nav-icon::before{right: 14px;}
+
+ .header .menu-botton:checked ~ .menu-icon .nav-icon::after{left: 14px;}
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+
+
+/*classi h e p home page'*/
+
+ .h1-home-page{font-size: 80px; margin-left: 150px; margin-top: 100px;}
+ 
+ .p-home-page-1{font-size: 33px;margin-left: 200px; }
+ 
+ .p-home-page-2{font-size: 33px;margin-left: 200px; }
+
+
+ /*classi h e p webserver raspberry*/
+
+ .h1-WebServerconRaspberry{font-size: 80px; margin-left: 105px; margin-top: 110px;}
+ 
+ .h2-WebServerconRaspberry-1{font-size: 58px; margin-left: 105px; margin-top: -120px;}
+ 
+ .p-WebServerconRaspberry{font-size: 25px;margin-left: 105px;}
+ 
+ .h2-WebServerconRaspberry-2{font-size: 58px; margin-left: 105px; margin-top: 170px;}
+ 
+ 
+ /*classi h e p accesso msql*/
+ 
+ .h1-accesso-msql{font-size: 80px; margin-left: 105px; margin-top: 110px;}
+ 
+ .p-accesso-mysql{font-size: 25px;margin-left: 105px;}
+
+ 
+ /*classe immagini home page*/
+
+.img-home-page{transform: scale(0.7); margin-left: 994PX; margin-top: -180px;}
+
+
+ /*classe immagini webserver raspberry*/
+ .img-raspbarry{transform: scale(0.7); margin-top: -200px; margin-left: -72px;}
+ 
+ .img-comando{margin-left: 105px; margin-top: 50px;}
+ 
+ .img-ip-configure{margin-left: 105px; margin-top: 90px;}
+ 
+ .img-echo{margin-left: 105px; margin-top: 90px;}
+ 
+ .img-server{margin-left: -124px; margin-top: 20px; transform: scale(0.7);}
+ 
+ .img-prova{margin-left: 105px; margin-top: 90px;}
+ 
+ .img-mysql{margin-left: 105px; margin-top: 90px;}
+ 
+ .img-server-2{margin-left: 105px; margin-top: 90px;}
+ 
+ .img-fritz{margin-left: 60px; margin-top: 90px; transform: scale(0.9);}
+ 
+ .img-fritz-2{margin-left: 68px; margin-top: 90px; transform: scale(0.9);}
+ 
+ .img-fritz-box{margin-left: 108px; margin-top: 90px; transform: scale(1.0);}
+
+ /*classe immagini accesso msql*/
+ 
+ .img-phpMyAdmin{margin-left: 105px; margin-top: 90px;}
+ 
+ .img-account{margin-left: 105px; margin-top: 90px;}
+ 
+ .img-script{margin-left: 105px; margin-top: 90px;}
+
+
+ /*classi argomenti su rasp*/
+
+.button-rasp-1{margin-top: 180px; margin-left: 82vh; background: #53617a; text-decoration: none; font-size: 25px; border: none; padding: 30px; border-radius: 40px; color: #fcca25; cursor: pointer;}
+
+.fotter-catt-rasp{margin-top: 479px;}
+
+
+/*classi argomenti su python e mysql*/
+
+.button-python-mysql-1{margin-top: 180px; margin-left: 82vh; background: #53617a; text-decoration: none; font-size: 25px; border: none; padding: 30px; border-radius: 40px; color: #fcca25; cursor: pointer;}
+
+.fotter-catt-python-mysqul{margin-top: 479px;}
+
+
+/*classi loader*/
+
+.loader-wrapper{ background-color: #faf5eb; display: flex; align-items: center; justify-content: center; position: absolute; height: 125%; width: 100%;top:0; left: 0; animation: loader-wrapper 6s ease}
+
+.loader{display: inline-block; width: 70px; height: 70px; border-radius:50px px; border: 7px solid transparent; box-sizing: border-box; border-top-color: #1d222b;  border-bottom-color: #1d222b; 
+
+  animation: loader 0.7s ease; margin-top: -160px;}
+
+@keyframes loader {
+
+  0%{ transform: rotate(0deg); border-radius: 50px;}
+  
+  25%{ transform: rotate(90deg); border-radius: 50px;}
+  
+  50%{ transform: rotate(180deg); border-radius: 50px;}
+  
+  80%{ transform: rotate(260deg); border-radius: 50px;}
+
+  
+  
+}
+
+/*classi media query cel*/
+
+@media(max-width: 768px){
+
+  /*classi webserver raspberry*/
+  
+  .h1-home-page{font-size: 50px; margin-left: 20px; margin-top: 315px;} .img-home-page{align-items: center; margin-left: -250px; transform: scale(0.4); margin-top: -30px; position: absolute;} .p-home-page-1{font-size: 27px;margin-left: 30px;  margin-top: 70px; }
+  
+  .p-home-page-2{font-size: 27px;margin-left: 30px; margin-top: 70px; } .menu{text-decoration: none; color: white; transition: all 0.2s ease-in-out; padding: 1px 10px} 
+  
+  footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width: 100%; margin-top: 590px;} 
+  
+  .button-rasp-1{margin-top: 315px; margin-left: 45px; background: #53617a; text-decoration: none; font-size: 25px; border: none; padding: 30px; border-radius: 40px; color: #fcca25; cursor: pointer;}
+  
+  .loader{display: inline-block; width: 70px; height: 70px; border-radius:50px px; border: 7px solid transparent; box-sizing: border-box; border-top-color: #1d222b;  border-bottom-color: #1d222b; 
+  
+  animation: loader 0.7s ease; margin-top: -350px;} .h1-WebServerconRaspberry{font-size: 50px; margin-left: 20px; margin-top: 315px;} .img-raspbarry{transform: scale(0.4); margin-top: -400px; margin-left: -295px; position: absolute;}
+  
+  .h2-WebServerconRaspberry-1{font-size: 50px; margin-left: 20px; margin-top: -170px;} .p-WebServerconRaspberry{font-size: 20px;margin-left: 20px;} .h2-WebServerconRaspberry-2{font-size: 50px; margin-left: 20px; margin-top: 170px;}
+  
+  .img-echo{margin-left: -226px; margin-top: -90px; transform: scale(0.4); position: absolute;} .img-comando{margin-left: -25px; margin-top: 170px; transform: scale(0.8); position: absolute;} .img-prova{margin-left: -60px; margin-top: 40px; transform: scale(0.7); position: absolute; }
+  
+  .img-mysql{margin-left: -140px; margin-top: -140px; transform: scale(0.5); position: absolute ;} .img-ip-configure{margin-left: -29px; margin-top: 10px; transform: scale(0.8); position: absolute;} .img-server-2{margin-left: -260px; margin-top: -140px; transform: scale(0.4); position: absolute;}
+  
+  .img-fritz{margin-left: -262px; margin-top: -40px; transform: scale(0.4); position: absolute;} .img-fritz-2{margin-left: -176px; margin-top: -130px; transform: scale(0.5); position: absolute;} .img-fritz-box{margin-left: 5px; margin-top: -10px; transform: scale(0.9); position: absolute;}
+  
+  .button-python-mysql-1{margin-top: 315px; margin-left: 3.5vh; background: #53617a; text-decoration: none; font-size: 25px; border: none; padding: 30px; border-radius: 40px; color: #fcca25; cursor: pointer;}
+
+  .header{background: #53617a; width: 100%; height: 105px; box-shadow: 0 12px 20px rgba(0,0,0,.15); z-index: 1;} .separatore2{margin-top: 420px;}
+
+  
+  /*classe accesso msql*/
+
+  .h1-accesso-msql{font-size: 50px; margin-left: 20px; margin-top: 315px;} .p-accesso-mysql{font-size: 20px;margin-left: 20px;} .img-phpMyAdmin{margin-left: -258px; margin-top: -90px; transform: scale(0.4); position: absolute ;} .img-account{margin-left: 22px; margin-top: 40px; position: absolute;}
+  
+  .img-script{margin-left: -100px; margin-top: -70px; transform: scale(0.6); position: absolute;} *{box-sizing: border-box;} .separatore{margin-top: 340px;}
+
+
+
+   /*classe menu*/
+
+  .menu{ top: 50px; background-color: #1d222b;}
+  }
+
+
+  /*classi media query pc*/
+
+  @media(min-width: 48em){
+
+    .header li{float: left;} .header li a {padding: 3px 30px; margin-right: 50px;} .header ul {overflow: visible;} 
+    
+    .header ul a:hover {background-color: #f6cb3f; color: black; border-radius: 3px; padding: 5px 30px; display: block; transition: background-color .2s ease-out ;}  
+    
+    .header .menu{clear: none; float: right; max-height: 0; } .header .menu-icon{display: none;}
+  }

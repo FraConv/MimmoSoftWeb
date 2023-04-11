@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <title>MimmoSoftweb</title>
+
+</head>
+
+
+<header class="header">
+
+   
+        
+        
+   <a href="index2.html" ><img src="Logo sw.png" class="logo"></a>
+
+   <input class="menu-botton" id="menu-botton" type="checkbox">
+   <label for="menu-botton" class="menu-icon">
+      <span class="nav-icon"></span>
+   </label>
+    
+   
+
+     <ul class="menu">
+        <li> <a href="index2.html">Home</a></li>
+        <li> <a href="Raspberry.html">Raspberry</a></li>
+        <li> <a href="Python & MySQL.html">Python e MySQL</a></li>
+     </ul>
+ 
+     </header>
+
+<body>
+
+   <!--loader-->
+
+   <div class="loader-wrapper">
+
+      <span class="loader"><span class="loader-inn"></span></span>
+    
+       </div>
+
+<h1 class="h1-WebServerconRaspberry">Web Server con Raspberry </h1>
+
+<img src="f61IY5mYh8tL._SL1000_.jpg" class="img-raspbarry" alt="">
+
+<div class="separatore2">
+
+<h2 class="h2-WebServerconRaspberry-1">Di cosa hai bisogno: </h2>
+
+</div>
+
+<p class="p-WebServerconRaspberry">Raspberry PI zero 2</p>
+
+<p class="p-WebServerconRaspberry"> Alimentatore 5V per Raspberry (2A)</p>
+
+<p class="p-WebServerconRaspberry"> Micro SD (16 GB) (2A)</p>
+
+<h2 class="h2-WebServerconRaspberry-2"> OS Lite </h2>
+
+<p class="p-WebServerconRaspberry">Dopo aver installato l'OS Lite sulla micro SD, è necessario impostare il Raspberry con indirizzo IP statico e quello del gateway 
+
+<br>
+
+che corrisponde all'indirizzo del modem, ciò ci permetterà di accedere dall'esterno; tali configurazioni, devono essere fatte nel file 
+
+<br>
+
+dhcpcd.conf che si trova nella directory etc editando il seguente comando:
+
+<br>
+<br>
+
+pi@raspberrypi: sudo nano /etc/dhcpcd.conf</p>
+
+<img src="comando.jpg" class="img-comando" alt="">
+
+<div class="separatore2">
+
+<p class="p-WebServerconRaspberry">Scorrere lo script ed eliminare i commenti sulle righe che riguardano l'indirizzo IP statico:
+
+    <br>
+    <br>
+    
+    pi@raspberrypi: static ip_address=192.xxx.xxx.xxx (indirizzo IP che desiderate associare al Raspberry)
+
+    <br>
+    <br>
+
+    pi@raspberrypi: static routers=192.xxx.xxx.xxx (indirizzo IP del modem)
+
+    <br>
+    <br>
+
+    pi@raspberrypi: static domain_name_servers=192.xxx.xxx.xxx (indirizzo IP del modem, uguale allo static routers)
+    
+    </p>
+
+    </div>
+    
+    <img src="dhcp-1640629507538.jpg" class="img-ip-configure" alt="">
+
+    <div class="separatore2">
+    
+    <p class="p-WebServerconRaspberry">
+        
+        Fatto questo, salvate e riavviate il Raspberry con il comando:
+
+        <br>
+        <br>
+
+        pi@raspberrypi: sudo reboot
+
+        <br>
+        <br>
+
+        A questo punto, prima di procedere con l'installazione di Apache, dell'interprete PHP e del MySQL, assicuriamoci 
+        
+        <br>
+
+        di aggiornare del sistema con i soliti comandi:
+
+        <br>
+        <br>
+
+        pi@raspberrypi: sudo apt update
+
+        <br>
+        <br>
+
+        pi@raspberrypi: sudo apt upgrade
+        
+        <br>
+        <br>
+
+        Attendere che il tutto venga aggiornato; ci potrebbe impiegare alcuni minuti.
+    </p>
+
+    </div>
+
+
+    <h2 class="h2-WebServerconRaspberry-2"> Installazione Apache </h2>
+
+
+     <p class="p-WebServerconRaspberry">
+        
+        Molto semplicemente per installare l'Apache, dare il comando seguente:
+
+        <br>
+        <br>
+
+        pi@raspberrypi: sudo apt install apache2
+
+        <br>
+        <br>
+        
+        Il pacchetto Apache, ci serve per trasformare il nostro dispositivo Raspberry in un web server al fine di poter 
+        
+        <br>
+        
+        realizzare pagine web e di gestire le richieste che provengono dagli utenti.
+        
+        <br>
+        <br>
+        
+        Dopo l'istallazione, abilitiamo Apache con i seguenti comandi:
+
+        <br>
+        <br>
+        
+        pi@raspberrypi: sudo chown -R pi:www-data var/www/html
+
+        <br>
+        <br>
+        
+        pi@raspberrypi: sudo chmod -R 770 /var/www/html
+
+        <br>
+        <br>
+        
+        All'interno della directory /var/www/html, verranno inserite le nostre pagine web a cui accederemo o da rete locale o dall'esterno.
+
+        <br>
+        <br>
+        
+        Controlleremo se il tutto funziona dopo aver installato l'interprete PHP.
+    </p>
+
+    <h2 class="h2-WebServerconRaspberry-2"> Installazione PHP</h2>
+
+
+    <p class="p-WebServerconRaspberry">
+
+        Per installare il PHP digitiamo il seguente comando:
+
+        <br>
+        <br>
+
+        pi@raspberrypi: sudo apt install php php-mbstring
+
+        <br>
+        <br>
+
+        A questo punto possimo verificare se il tutto funziona creando uno script php e lo chiameremo index.php, 
+        
+        <br>
+        
+        quindi cancelleremo il file index.html presente nel percorso /var/www/html e lo sostituiremo con index.php:
+
+        <br>
+        <br>
+
+       pi@raspberrypi: sudo nano index.php
+
+       <br>
+       <br>
+
+       all'interno del file inseriamo:
+
+       </p>
+
+       <img src="echo.jpg"  class="img-echo" alt="" srcset="">
+
+       
+       <div class="separatore2">
+       
+       <p class="p-WebServerconRaspberry">Salvare il tutto con "Ctrl + X", confermiamo con "Y" + "Invio".</p>
+       
+      </div>
+
+       <h2 class="h2-WebServerconRaspberry-2">Verifica del funzionamento</h2>
+
+       <p class="p-WebServerconRaspberry">
+        Ora possiamo verificare che tutto il lavoro fatto fino ad ora sia andato a buon fine, per fare cio' basta semplicemente aprire un browser 
+
+        <br>
+
+        da un PC collegato alla stessa rete wifi dov'è collegato lo stesso Raspberry, quello che state usando con il Putty va benissimo, digitate 
+        
+        <br>
+
+        l'IP del Rasp nella riga degli indirizzi del browser e se tutto funziona dovrebbe apparire a schemo la stringa
+        
+        <br>
+        
+        My Server che ci restituisce il comando echo inserito nel file index.php che abbiamo appena fatto.
+       </p>
+
+       <img src="prova.jpg"  class="img-prova" alt="">
+
+
+       <div class="separatore2">
+      
+      
+       <h2 class="h2-WebServerconRaspberry-2">Installazione di MySQL</h2>
+
+       <p class="p-WebServerconRaspberry">
+        Eseguiamo il seguente comando:
+
+        <br>
+        <br>
+
+        pi@raspberrypi: sudo apt install mariadb-server php-mysql
+
+        <br>
+        <br>
+
+        A questo punto ci collegheremo al mysql per creare un nuovo utente root con una nostra password al fine 
+        
+        <br>
+        
+        di rendere il database disponibile dai futuri nostri scripts php:
+
+        <br>
+        <br>
+
+        pi@raspberrypi: sudo mysql --user=root
+
+        <br>
+        <br>
+
+        Stabilita la connessione con MySQL, è necessario digitare le seguenti righe di comando per creare il nuovo utente root 
+        
+        <br>
+        
+        cambiando la password con quella desiderata:
+
+
+        <br>
+        <br>
+
+        DROP USER 'root'@'localhost';
+
+        <br>
+        <br>
+
+        CREATE USER 'root'@'localhost' IDENTIFIED BY 'vostra password';
+
+        <br>
+        <br>
+
+        GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+
+        <br>
+        <br>
+
+        Fatto questo uscire con il comando exit
+
+        <br>
+        <br>
+
+        N.B. In questo modo, possiamo avere accesso al DB solo in locale, cioè possiamo creare, cancellare, modificare 
+        
+        <br>
+        
+        tabelle del DB e quant'altro solo se il programma che lo gestisce gira sullo stesso dispositivo in cui è presente il DB, 
+        
+        <br>
+        
+        nel nostro caso il RaspBerry. Per questo si utilizza il linguaggio PHP perchè esegue le istruzioni in locale anche se richieste dall'esterno. 
+        
+        <br>
+        
+        Tuttavia è possibile gestire il DB dall'esteno senza richiamare script in php che risiedono nel dispositivo stesso, creando 
+        
+        <br>
+        
+        un altro accesso diverso da 'root'@'localhost' che possiamo chiamare come vogliamo purchè al posto di localhost inseriamo '%'; 
+        
+        <br>
+        
+        spiegerò meglio quanto descritto nella pagina Python & MySQL.
+
+        <br>
+
+        Ora per poter gestire il data base in maniera pratica e non da linee di comando, installeremo il PHPMyAdmin 
+        
+        <br>
+        
+        al fine di realizzare le vostre tabelle in maniera visuale.
+       </p>
+
+       </div>
+        
+
+       <h2 class="h2-WebServerconRaspberry-2">Installazione di PHPMyAdmin:</h2>
+
+       <p class="p-WebServerconRaspberry">
+        Digitiamo il seguente comando per l'installazione di PHPMyAdmin:
+
+        <br>
+        <br>
+
+        pi@raspberrypi: sudo apt install phpmyadmin
+
+        <br>
+        <br>
+
+        Ora sposteremo la directory phpmyadmin sotto la dir /var/www/html con il seguente comando:
+
+        <br>
+        <br>
+
+        pi@raspberrypi: sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+
+        <br>
+        <br>
+
+        Ora proviamo se tutto è andato a buon fine, digitando nel browser l'IP del RaspBerry + "/phpmyadmin"
+
+        <br>
+        <br>
+
+        Se abbiamo eseguito tutto correttamente dovrebbe apparire l'immagine seguente:
+       </p>
+
+     <img src="mysqljpg.jpg" class="img-mysql" alt="">
+
+   
+     
+     <div class="separatore2">
+     
+     <p class="p-WebServerconRaspberry">
+        Inserire utente e password (root e Vosta Password)  per poter accedere alla pagina di gestione del data base MySQL:
+     </p>
+
+
+     </div>
+
+ 
+
+     <img src="Cattura 5.png" class="img-server-2" alt="">
+
+     
+     <div class="separatore2"> 
+     
+     <p class="p-WebServerconRaspberry">
+        Bene, ora siete in  possesso di un Web server completo di data base sul vostro Raspberry pi zero 2; potete utilizzare php, html, e python 
+        
+        <br>
+
+        per realizzare pagine web al fine di interagire con dispositivi WiFi IoT di Vostra realizzazione ad esempio con il noto ESP8266 o ESP32.
+
+        <br>
+        <br>
+
+        Ma questo è sufficente a gestire il tutto su una rete locale wifi, per gestire il nostro Web server dall'esteno, è necessario conoscere l'indirizzo IP 
+        
+        <br>
+        
+        pubblico del Vostro modem, che non è detto che rimanga lo stesso a tempo indeterminato anzi viene modificato dal gestore della linea 
+        
+        <br>
+        
+        telefonica o ad ogni riavvio del modem a causa di blackout sulla rete elettrica.
+
+        <br>
+        <br>
+
+        Per ovviare a questo inconveniente, avete due possibilità:
+
+        <br>
+        <br>
+
+        - Richiedere un indirizzo IP statico al Vostro gestore, ciò però comporterà un incremento di prezzo
+
+        <br>
+        <br>
+
+        - Utilizzare un host DDNS che reindirizza il Vostro nome host all'IP dinamico a Voi associato in quel momento (es. NO-IP  oppure DynDDNS)\
+
+        <br>
+        <br>
+
+        Però portebbe esserci una terza soluzione molto più semplice; se siete fortunati, molto probabilmente siete in possesso di un Modem 
+        
+        <br>
+        
+        che mette a disposizione un server al fine di gestire l'accesso da remoto esteno per poter modificare le impostazioni dello stesso.
+
+        <br>
+
+        Molte marche di Modem presenti sul mercato mettono a disposizione gratuitamente questo servizio pervio registrazione del 
+        
+        <br>
+        
+        prodotto, io posseggo un Fritz Box 7530. Di seguito potete osservare li raspberry presente nella rete wifi locale:
+     </p>
+     
+
+     </div>
+
+     <img src="Cattura 4.png" class="img-fritz" alt="">
+
+     
+     <div class="separatore2">
+     
+     <p class="p-WebServerconRaspberry">
+        Se avete registrato il prodotto, nel menù Internet -> Abilitazioni nella scheda Servizi Fritz!Box, trovate l'host name 
+        
+        <br>
+        
+        per poter accedere dall'esterno, di solito è un codice con una serie di lettere.myfritz.net :
+     </p>
+
+
+     </div>
+
+     <img src="Cattura 3.png" class="img-fritz-2"  alt="">
+
+     
+     <div class="separatore2">
+     
+     <p class="p-WebServerconRaspberry">
+        Ora un'altro piccolo passaggio e saremo pronti; nella scheda  Abilitazioni porte, dobbiamo inserire l'indirizzo IP 
+        
+        <br>
+        
+        del Raspberry, come di seguito:
+     </p>
+
+     
+   </div>
+     
+     <img src="Cattura 2.png" class="img-fritz-box"  alt="">
+
+     <div class="separatore2">
+     
+     <p class="p-WebServerconRaspberry">
+
+        A questo punto se digitate l'host fornito da FritzBox nella barra degli indirizzi del browser, anche da un telefonino che non è 
+        
+        <br>
+        
+        connesso alla rete locale, potrete accedere al Vostro web server.
+
+        <br>
+        <br>
+
+        BENE questo è tutto, spero che la procedura sia stata utile e se avete un Modem di un'altra marca, potete verificare 
+        
+        <br>
+        
+        su Internet se è predisposto a questo tipo di servizio.
+
+
+     </p>
+
+   </div>
+
+<script src="script.js"></script>
+
+</body>
+
+
+
+<footer>
+<p>  Copyright © 2023 MimmoSoftweb</p>
+</footer>
+
+
+</html>

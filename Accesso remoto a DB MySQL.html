@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <title>MimmoSoftweb</title>
+
+</head>
+
+
+<header class="header">
+
+   
+        
+        
+    <a href="index2.html" ><img src="Logo sw.png" class="logo"></a>
+ 
+    <input class="menu-botton" id="menu-botton" type="checkbox">
+    <label for="menu-botton" class="menu-icon">
+       <span class="nav-icon"></span>
+    </label>
+     
+    
+ 
+      <ul class="menu">
+         <li> <a href="index2.html">Home</a></li>
+         <li> <a href="Raspberry.html">Raspberry</a></li>
+         <li> <a href="Python & MySQL.html">Python e MySQL</a></li>
+      </ul>
+  
+      </header>
+
+<body>
+   
+    <h1 class="h1-accesso-msql">Accesso remoto a DB MySQL </h1>
+
+    <p class="p-accesso-mysql">
+        In questa pagina, vedremo come creare un accesso remoto al DB, e successivamente gestirlo con uno script in Python.
+
+        <br>
+        <br>
+
+        Per accedere al DB residente nel RaspBerry da un dispositivo remoto è necessario creare un accesso che sia diverso 
+        
+        <br>
+        
+        da localhost e successivamente dargli tutti i privilegi per poterlo gestire:
+
+
+        <br>
+        <br>
+
+        pi@raspberrypi: cd /var/www/html 
+
+        <br>
+        <br>
+
+        pi@raspberrypi: sudo mysql -u root -p
+
+        <br>
+        <br>
+
+        Enter password: inserire la vostra password di root.
+
+        <br>
+
+        Se tutto è andato a buon fine apparirà quanto segue:
+
+        <br>
+        <br>
+
+        Welcome to the MariaDB monitor.  Commands end with ; or \g.
+        <br>
+        Your MariaDB connection id is 26
+        <br>
+        Server version: 10.5.15-MariaDB-0+deb11u1 Raspbian 11
+
+        <br>
+        <br>
+
+        Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+        <br>
+        <br>
+
+        Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+        <br>
+        <br>
+
+        Ora con dei semplici comandi andremo a creare un nuovo utente con tutti i privilegi:
+
+        <br>
+        <br>
+
+
+        MariaDB [(none)]> CREATE USER 'nuovo user'@'%' IDENTIFIED BY 'nuova password';
+        <br>
+        <br>
+        Query OK, 0 rows affected (0.008 sec)
+
+        <br>
+        <br>
+
+        MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'nuovo user'@'%' WITH GRANT OPTIO
+        <br>
+        N;
+        <br>
+        Query OK, 0 rows affected (0.003 sec)
+
+        <br>
+        <br>
+
+        MariaDB [(none)]> exit
+        <br>
+        Bye
+
+        <br>
+        <br>
+
+        Il nuovo user è stato creato e avrà accesso al DB da remoto perchè al posto di localhost abbiamo inserito il carattere 
+        
+        <br>
+
+        speciale '%' cioè da qualsiasi indirizzo ip; possiamo anche decidere un singolo indirizzo ip o tutti gli ip della 
+        
+        <br>
+        
+        nostra rete domestica semplicemente inserendo '192.168.1.%'.
+
+        <br>
+        <br>
+
+        E' possibile controllare e modificare i privilegi dei singoli Account utenti anche da phpMyAdmin:
+
+    </p>
+
+    <img src="Cattura6.png" class="img-phpMyAdmin" alt="">
+   
+    <div class="separatore">
+   
+    <p class="p-accesso-mysql">
+
+    
+    
+    Da phpMyAdmin è tuttavia possibile creare un nuovo Account user in modo intuitivo evitando di seguire la 
+    
+    <br>
+    
+    procedura descritta sopra, selezionando i privilegi che riteniamo più opportuni.
+
+   </p>
+
+    </div>
+
+   <img src="creare-1666464546829.jpg" class="img-account" alt="">
+
+   
+   <div class="separatore">
+   
+   <p class="p-accesso-mysql">
+
+    Ho inserito un semplice script in python che utilizza la libreria mysql connector 
+    
+    <br>
+    
+    (da scaricare con pip install mysql-connector-python).
+
+    <br>
+
+    Lo script fa una cosa semplicissima ma sintetizza in poche linee di codice l'accesso al DB che risiede nel RaspBerry 
+   
+    <br>
+
+    e visualizza tutte le tabelle che sono al suo interno; approfondendo l'argomento è possibile creare 
+    
+    <br>
+    
+    e cancellare tabelle, inserire dati nelle tabelle e quant'altro.
+    
+
+   </p>
+
+</div>
+
+   <img src="sql_py-1666465348206.jpg" class="img-script" alt="">
+
+ 
+  <!--link js-->
+
+
+ 
+ <script src="script.js"></script>
+
+</body>
+
+<!--loader-->
+
+<div class="loader-wrapper">
+
+    <span class="loader"><span class="loader-inn"></span></span>
+  
+     </div>
+
+
+<footer>
+<p>  Copyright © 2023 MimmoSoftweb</p>
+</footer>
+
+
+</html>
