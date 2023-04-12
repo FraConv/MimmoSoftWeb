@@ -141,7 +141,7 @@ footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width
 
 .loader{display: inline-block; width: 70px; height: 70px; border-radius:50px px; border: 7px solid transparent; box-sizing: border-box; border-top-color: #1d222b;  border-bottom-color: #1d222b; 
 
-  animation: loader 0.7s ease; margin-top: -160px;}
+  animation: loader 1.2s ease; margin-top: -160px;}
 
 @keyframes loader {
 
@@ -153,6 +153,7 @@ footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width
   
   80%{ transform: rotate(260deg); border-radius: 50px;}
 
+  100%{ transform: rotate(310deg); border-radius: 50px;}
   
   
 }
@@ -211,4 +212,15 @@ footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width
     .header ul a:hover {background-color: #f6cb3f; color: black; border-radius: 3px; padding: 5px 30px; display: block; transition: background-color .2s ease-out ;}  
     
     .header .menu{clear: none; float: right; max-height: 0; } .header .menu-icon{display: none;}
+  }
+
+
+  /*classi media query laptop*/
+
+  @media (min-device-width: 1200px) and (max-device-width: 1600px) {
+
+    .h1-home-page{font-size: 70px; margin-left: 70px; margin-top: 135px;} .p-home-page-1{font-size: 34px;margin-left: 76px;  margin-top: 70px; } 
+    .p-home-page-2{font-size: 34px;margin-left: 76px; margin-top: 50px; } .img-home-page{align-items: center; margin-left: 520px; transform: scale(0.); margin-top: -20px; position: absolute;}
+    footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width: 100%; margin-top: 600px;} 
+
   }
