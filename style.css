@@ -220,7 +220,25 @@ footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width
   @media (min-device-width: 1200px) and (max-device-width: 1600px) {
 
     .h1-home-page{font-size: 70px; margin-left: 70px; margin-top: 135px;} .p-home-page-1{font-size: 34px;margin-left: 76px;  margin-top: 70px; } 
+    
     .p-home-page-2{font-size: 34px;margin-left: 76px; margin-top: 50px; } .img-home-page{align-items: center; margin-left: 520px; transform: scale(0.); margin-top: -20px; position: absolute;}
+    
     footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width: 100%; margin-top: 600px;} body{background: #faf5eb; font-family:Source Sans Pro;}
+
+  }
+
+  /*classi media query galaxy */
+
+  @media (min-device-width: 300px) and (max-device-width: 400px){
+
+    .h1-home-page{font-size: 33px; margin-left: 19px; margin-top: 310px;}  .p-home-page-1{font-size: 21px;margin-left: 19px;  margin-top: 70px; } .p-home-page-2{font-size: 21px;margin-left: 19px; margin-top: 50px; }
+
+    .img-home-page{align-items: center; margin-left: -300px; transform: scale(0.3); margin-top: -20px; position: absolute;}  
+    
+    footer{background: #1d222b; padding: 20px ; font-size: 17px; color: white; width: 100%; margin-top: 600px;} body{background: #faf5eb; font-family:Source Sans Pro;}
+
+    .button-python-mysql-1{margin-top: 320px; margin-left: 11px; background: #53617a; text-decoration: none; font-size: 20px; border: none; padding: 24px 12px; border-radius: 60px; color: #fcca25; cursor: pointer;}
+
+    .button-rasp-1{margin-top: 320px; margin-left: 21px; background: #53617a; text-decoration: none; font-size: 20px; border: none; padding: 24px 12px; border-radius: 40px; color: #fcca25; cursor: pointer;}
 
   }
