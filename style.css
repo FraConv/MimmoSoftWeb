@@ -162,13 +162,15 @@ footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width
 
 @media(max-width: 768px){
 
-  /*classi webserver raspberry*/
+ 
   
   .h1-home-page{font-size: 50px; margin-left: 20px; margin-top: 315px;} .img-home-page{align-items: center; margin-left: -250px; transform: scale(0.4); margin-top: -30px; position: absolute;} .p-home-page-1{font-size: 27px;margin-left: 30px;  margin-top: 70px; }
   
   .p-home-page-2{font-size: 27px;margin-left: 30px; margin-top: 70px; } .menu{text-decoration: none; color: white; transition: all 0.2s ease-in-out; padding: 1px 10px} 
   
   footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width: 100%; margin-top: 590px;} 
+  
+   /*classi webserver raspberry*/
   
   .button-rasp-1{margin-top: 315px; margin-left: 45px; background: #53617a; text-decoration: none; font-size: 25px; border: none; padding: 30px; border-radius: 40px; color: #fcca25; cursor: pointer;}
   
@@ -203,7 +205,7 @@ footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width
   }
 
 
-  /*classi media query pc*/
+  /*classi media query menu pc*/
 
   @media(min-width: 48em){
 
@@ -231,14 +233,43 @@ footer{background: #1d222b; padding: 20px ; font-size: 20px; color: white; width
 
   @media (min-device-width: 300px) and (max-device-width: 400px){
 
+     /*classi home */
+    
     .h1-home-page{font-size: 33px; margin-left: 19px; margin-top: 310px;}  .p-home-page-1{font-size: 21px;margin-left: 19px;  margin-top: 70px; } .p-home-page-2{font-size: 21px;margin-left: 19px; margin-top: 50px; }
 
     .img-home-page{align-items: center; margin-left: -300px; transform: scale(0.3); margin-top: -20px; position: absolute;}  
     
     footer{background: #1d222b; padding: 20px ; font-size: 17px; color: white; width: 100%; margin-top: 600px;} body{background: #faf5eb; font-family:Source Sans Pro;}
 
-    .button-python-mysql-1{margin-top: 320px; margin-left: 11px; background: #53617a; text-decoration: none; font-size: 20px; border: none; padding: 24px 12px; border-radius: 60px; color: #fcca25; cursor: pointer;}
+     /*classi python-mysql */
+    
+    .button-python-mysql-1{margin-top: 320px; margin-left: 42px; background: #53617a; text-decoration: none; font-size: 20px; border: none; padding: 24px 12px; border-radius: 60px; 
+     
+    color: #fcca25; cursor: pointer;} .h1-accesso-msql{font-size: 33px; margin-left: 20px; margin-top: 315px;}  .p-accesso-mysql{font-size: 21px;margin-left: 20px;}
 
-    .button-rasp-1{margin-top: 320px; margin-left: 21px; background: #53617a; text-decoration: none; font-size: 20px; border: none; padding: 24px 12px; border-radius: 40px; color: #fcca25; cursor: pointer;}
+    .img-phpMyAdmin{margin-left: -305px; margin-top: -90px; transform: scale(0.3); position: absolute ;} .img-account{margin-left: 22px; margin-top: 40px; position: absolute;}
+
+    .img-script{margin-left: -133px; margin-top: -70px; transform: scale(0.5); position: absolute;}
+
+
+     /*classi raspberry */
+    
+    .button-rasp-1{margin-top: 320px; margin-left: 54px; background: #53617a; text-decoration: none; font-size: 20px; border: none; padding: 24px 12px; 
+     
+     border-radius: 40px; color: #fcca25; cursor: pointer;} .h1-WebServerconRaspberry{font-size: 33px; margin-left: 20px; margin-top: 315px;}
+
+     .img-raspbarry{transform: scale(0.3); margin-top: -400px; margin-left: -345px; position: absolute;} .h2-WebServerconRaspberry-1{font-size: 29px; margin-left: 20px; margin-top: -170px;}
+
+     .p-WebServerconRaspberry{font-size: 21px;margin-left: 17px;} .h2-WebServerconRaspberry-2{font-size: 29px; margin-left: 20px; margin-top: 170px;}
+
+     .img-comando{margin-left: -55px; margin-top: 170px; transform: scale(0.7); position: absolute;} .img-ip-configure{margin-left: -78px; margin-top: 10px; transform: scale(0.6); position: absolute;}
+
+     .img-prova{margin-left: -87px; margin-top: 40px; transform: scale(0.6); position: absolute; } .img-server-2{margin-left: -305px; margin-top: -140px; transform: scale(0.3); position: absolute;}
+
+     .img-fritz{margin-left: -307px; margin-top: -40px; transform: scale(0.3); position: absolute;} .img-fritz-2{margin-left: -215px; margin-top: -130px; transform: scale(0.4); position: absolute;}
+
+     
+
+     
 
   }
